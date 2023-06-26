@@ -11,7 +11,8 @@ namespace ConsoleFinancialAccounting
             double earnings = 0;
             double balance = 0;
             while (activeApp)
-            {Console.WriteLine("Оберiть операцiю: \n 1 - Внести витрату \n2 - Переглянути витрати \n3 - Внести дохiд \n4 - Переглянути доходи \n5 - Переглянути загальний баланс \n exit - Закрити програму");
+            {
+                Console.WriteLine("Оберiть операцiю: \n 1 - Внести витрату \n2 - Переглянути витрати \n3 - Внести дохiд \n4 - Переглянути доходи \n5 - Переглянути загальний баланс \n exit - Закрити програму");
                 string operation = Console.ReadLine();
 
                 switch (operation)
@@ -23,11 +24,15 @@ namespace ConsoleFinancialAccounting
                     case "2": 
                         Console.WriteLine($"Cума витрат: {expences}");
                         break;
-                    case "3": EnterEarning(ref earnings, ref balance); break;
+                    case "3": 
+                        EnterEarning(ref earnings, ref balance); 
+                        break;
                     case "4": 
-                    Console.WriteLine($"Cума доходiв: {earnings}"); break;
+                        Console.WriteLine($"Cума доходiв: {earnings}");
+                        break;
                     case "5": 
-                    Console.WriteLine($"Баланс: {balance}"); break;
+                        Console.WriteLine($"Баланс: {balance}");
+                        break;
                     case "exit": activeApp = false; break;
                     default: Console.WriteLine("Ви не обрали операцiю"); break;
                 }
